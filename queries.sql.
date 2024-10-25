@@ -1,0 +1,36 @@
+-- Displaying the first 10 rows of the dataset
+
+SELECT * 
+FROM customer_data
+LIMIT 10;
+
+-- Counting the total number of customers
+
+SELECT COUNT(customer_id) AS total_customers
+FROM customer_data;
+
+-- Calculating the average number of orders placed by customers
+
+SELECT AVG(Number_of_Orders) AS avg_orders
+FROM customer_data;
+
+-- Finding the total amount of money spent by all customers
+
+SELECT SUM(amount) AS total_spent
+FROM customer_data;
+
+-- Retrieving the top 5 customers by the highest number of orders
+
+SELECT customer_id, Number_of_Orders
+FROM customer_data
+ORDER BY Number_of_Orders DESC
+LIMIT 5;
+
+-- Finding customers who placed more than 5 orders in the last 7 days
+
+SELECT customer_id, Number_of_Orders_in_last_7_days
+FROM customer_data
+WHERE Number_of_Orders_in_last_7_days > 5;
+
+
+
